@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             btnArticle = new Button();
             btNewsPaper = new Button();
+            btComposition = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(btnArticle, 0, 0);
             tableLayoutPanel1.Controls.Add(btNewsPaper, 1, 0);
+            tableLayoutPanel1.Controls.Add(btComposition, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -73,6 +75,16 @@
             btNewsPaper.UseVisualStyleBackColor = true;
             btNewsPaper.Click += btNewsPaper_Click;
             // 
+            // btComposition
+            // 
+            btComposition.Anchor = AnchorStyles.None;
+            btComposition.Location = new Point(153, 326);
+            btComposition.Name = "btComposition";
+            btComposition.Size = new Size(94, 23);
+            btComposition.TabIndex = 2;
+            btComposition.Text = "Composition";
+            btComposition.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -92,5 +104,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnArticle;
         private Button btNewsPaper;
+        private Button btComposition;
     }
 }
