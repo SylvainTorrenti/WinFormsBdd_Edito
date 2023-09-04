@@ -37,26 +37,35 @@
             btAdd = new Button();
             btDelete = new Button();
             btUpdate = new Button();
+            tlpBox = new TableLayoutPanel();
+            Titre = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            tbxTitle = new TextBox();
+            tbxCorps = new TextBox();
+            tbxAutor = new TextBox();
             bsArticle = new BindingSource(components);
             tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArticle).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            tlpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bsArticle).BeginInit();
             SuspendLayout();
             // 
             // tlpMain
             // 
             tlpMain.ColumnCount = 1;
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpMain.Controls.Add(dgvArticle, 0, 0);
-            tlpMain.Controls.Add(flowLayoutPanel1, 0, 1);
+            tlpMain.Controls.Add(flowLayoutPanel1, 0, 2);
+            tlpMain.Controls.Add(tlpBox, 0, 1);
             tlpMain.Dock = DockStyle.Fill;
             tlpMain.Location = new Point(0, 0);
             tlpMain.Name = "tlpMain";
-            tlpMain.RowCount = 2;
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 70.6666641F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 29.333334F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpMain.RowCount = 3;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 64.6666641F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20.666666F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 14.4444447F));
             tlpMain.Size = new Size(800, 450);
             tlpMain.TabIndex = 0;
             // 
@@ -74,7 +83,7 @@
             dgvArticle.RowHeadersVisible = false;
             dgvArticle.RowTemplate.Height = 25;
             dgvArticle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvArticle.Size = new Size(794, 311);
+            dgvArticle.Size = new Size(794, 285);
             dgvArticle.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -84,9 +93,9 @@
             flowLayoutPanel1.Controls.Add(btDelete);
             flowLayoutPanel1.Controls.Add(btUpdate);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 320);
+            flowLayoutPanel1.Location = new Point(3, 387);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(794, 127);
+            flowLayoutPanel1.Size = new Size(794, 60);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // btRefresh
@@ -141,6 +150,84 @@
             btUpdate.UseVisualStyleBackColor = true;
             btUpdate.Click += btUpdate_Click;
             // 
+            // tlpBox
+            // 
+            tlpBox.ColumnCount = 2;
+            tlpBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.86902F));
+            tlpBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 84.13098F));
+            tlpBox.Controls.Add(Titre, 0, 0);
+            tlpBox.Controls.Add(label2, 0, 1);
+            tlpBox.Controls.Add(label3, 0, 2);
+            tlpBox.Controls.Add(tbxTitle, 1, 0);
+            tlpBox.Controls.Add(tbxCorps, 1, 1);
+            tlpBox.Controls.Add(tbxAutor, 1, 2);
+            tlpBox.Dock = DockStyle.Fill;
+            tlpBox.Location = new Point(3, 294);
+            tlpBox.Name = "tlpBox";
+            tlpBox.RowCount = 3;
+            tlpBox.RowStyles.Add(new RowStyle());
+            tlpBox.RowStyles.Add(new RowStyle());
+            tlpBox.RowStyles.Add(new RowStyle());
+            tlpBox.Size = new Size(794, 87);
+            tlpBox.TabIndex = 2;
+            // 
+            // Titre
+            // 
+            Titre.AutoSize = true;
+            Titre.Dock = DockStyle.Fill;
+            Titre.Location = new Point(3, 0);
+            Titre.Name = "Titre";
+            Titre.Size = new Size(120, 29);
+            Titre.TabIndex = 0;
+            Titre.Text = "Titre";
+            Titre.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Location = new Point(3, 29);
+            label2.Name = "label2";
+            label2.Size = new Size(120, 29);
+            label2.TabIndex = 1;
+            label2.Text = "Corps";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Location = new Point(3, 58);
+            label3.Name = "label3";
+            label3.Size = new Size(120, 29);
+            label3.TabIndex = 2;
+            label3.Text = "Auteur";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // tbxTitle
+            // 
+            tbxTitle.Dock = DockStyle.Fill;
+            tbxTitle.Location = new Point(129, 3);
+            tbxTitle.Name = "tbxTitle";
+            tbxTitle.Size = new Size(662, 23);
+            tbxTitle.TabIndex = 3;
+            // 
+            // tbxCorps
+            // 
+            tbxCorps.Dock = DockStyle.Fill;
+            tbxCorps.Location = new Point(129, 32);
+            tbxCorps.Name = "tbxCorps";
+            tbxCorps.Size = new Size(662, 23);
+            tbxCorps.TabIndex = 4;
+            // 
+            // tbxAutor
+            // 
+            tbxAutor.Dock = DockStyle.Fill;
+            tbxAutor.Location = new Point(129, 61);
+            tbxAutor.Name = "tbxAutor";
+            tbxAutor.Size = new Size(662, 23);
+            tbxAutor.TabIndex = 5;
+            // 
             // frmArticle
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,10 +236,14 @@
             Controls.Add(tlpMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmArticle";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmArticle";
+            Load += frmArticle_Load;
             tlpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvArticle).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            tlpBox.ResumeLayout(false);
+            tlpBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)bsArticle).EndInit();
             ResumeLayout(false);
         }
@@ -167,5 +258,12 @@
         private Button btAdd;
         private Button btDelete;
         private Button btUpdate;
+        private TableLayoutPanel tlpBox;
+        private Label Titre;
+        private Label label2;
+        private Label label3;
+        private TextBox tbxTitle;
+        private TextBox tbxCorps;
+        private TextBox tbxAutor;
     }
 }

@@ -35,5 +35,47 @@ namespace WinFormsBdd_Edito
             }
 
         }
+        public int AddArticle(string Titre, string Corps, string? Auteur)
+        {
+            try
+            {
+                _dbconnection.Open();
+                var sql = "INSERT INTO article (Titre, Corps , Auteur) VALUES (@Titre, @Corps,@Auteur); SELECT LAST_INSERT_ID() ";
+                var result = _dbconnection.Query<int>(sql, new { Titre, Corps, Auteur });
+                return result.Single();
+            }
+            finally
+            {
+                _dbconnection.Close();
+            }
+        }
+        public int DeleteArticle(int IDArticle)
+        {
+            try
+            {
+                _dbconnection.Open();
+                var sql = "DELETE FROM article WHERE IDArticle = @IDArticle;";
+                return _dbconnection.Execute(sql, new { IDArticle });
+            }
+            finally
+            {
+                _dbconnection.Close();
+            }
+        }
+        public int UpdateUser(int IDArticle, string Titre, string Corps, string? Auteur)
+        {
+            try
+            {
+                _dbconnection.Open();
+                var sql = "UPDATE article SET Titre = @Titre, Corps=@Corps, Auteur=@Auteur WHERE IDArticle = @IDArticle ;";
+                return _dbconnection.Execute(sql, new { IDArticle, Titre, Corps, Auteur });
+                
+            }
+            finally
+            {
+                _dbconnection.Close();
+            }
+            
+        }
     }
 }

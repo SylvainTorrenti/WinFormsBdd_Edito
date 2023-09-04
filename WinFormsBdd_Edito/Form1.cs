@@ -9,9 +9,15 @@ namespace WinFormsBdd_Edito
 
         private void btnArticle_Click(object sender, EventArgs e)
         {
-            using frmArticle frm = new();
-            frm.ShowDialog();
+            using frmArticle frmArticle = new();
+            frmArticle.ShowDialog();
 
+        }
+
+        private void btNewsPaper_Click(object sender, EventArgs e)
+        {
+            using frmNewsPaper frmNewsPaper = new();
+            frmNewsPaper.ShowDialog();
         }
     }
 }

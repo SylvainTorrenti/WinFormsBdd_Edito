@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             tableLayoutPanel1 = new TableLayoutPanel();
             btnArticle = new Button();
+            btNewsPaper = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,6 +41,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(btnArticle, 0, 0);
+            tableLayoutPanel1.Controls.Add(btNewsPaper, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -60,6 +62,17 @@
             btnArticle.UseVisualStyleBackColor = true;
             btnArticle.Click += btnArticle_Click;
             // 
+            // btNewsPaper
+            // 
+            btNewsPaper.Anchor = AnchorStyles.None;
+            btNewsPaper.Location = new Point(562, 101);
+            btNewsPaper.Name = "btNewsPaper";
+            btNewsPaper.Size = new Size(75, 23);
+            btNewsPaper.TabIndex = 1;
+            btNewsPaper.Text = "Journal";
+            btNewsPaper.UseVisualStyleBackColor = true;
+            btNewsPaper.Click += btNewsPaper_Click;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -78,5 +91,6 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnArticle;
+        private Button btNewsPaper;
     }
 }
