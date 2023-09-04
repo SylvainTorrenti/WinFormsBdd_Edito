@@ -81,8 +81,12 @@ namespace WinFormsBdd_Edito
             {
                 if (MessageBox.Show($"Confirmer la modification de l'article {current.Titre} ?", "Modification", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
+                    if (tbxAutor != null)
+                    {
+                        MessageBox.Show($"L'article {current.Titre} a bien était modifier", "Modifications effectuées", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _db.UpdateUser(current.iDArticle, tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
                     btRefresh.PerformClick();
+                    }
                 }
             }
         }
