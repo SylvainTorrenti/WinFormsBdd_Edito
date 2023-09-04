@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticle));
             tlpMain = new TableLayoutPanel();
             dgvArticle = new DataGridView();
-            bsArticle = new BindingSource(components);
             flowLayoutPanel1 = new FlowLayoutPanel();
             btRefresh = new Button();
             btAdd = new Button();
             btDelete = new Button();
             btUpdate = new Button();
+            bsArticle = new BindingSource(components);
             tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArticle).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bsArticle).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bsArticle).BeginInit();
             SuspendLayout();
             // 
             // tlpMain
@@ -64,13 +64,16 @@
             // 
             dgvArticle.AllowUserToAddRows = false;
             dgvArticle.AllowUserToDeleteRows = false;
+            dgvArticle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvArticle.BackgroundColor = SystemColors.Control;
             dgvArticle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvArticle.Dock = DockStyle.Fill;
             dgvArticle.Location = new Point(3, 3);
             dgvArticle.Name = "dgvArticle";
             dgvArticle.ReadOnly = true;
+            dgvArticle.RowHeadersVisible = false;
             dgvArticle.RowTemplate.Height = 25;
+            dgvArticle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvArticle.Size = new Size(794, 311);
             dgvArticle.TabIndex = 0;
             // 
@@ -97,6 +100,7 @@
             btRefresh.Text = "Actualiser";
             btRefresh.TextAlign = ContentAlignment.MiddleRight;
             btRefresh.UseVisualStyleBackColor = true;
+            btRefresh.Click += btRefresh_Click;
             // 
             // btAdd
             // 
@@ -109,6 +113,7 @@
             btAdd.Text = "Ajouter";
             btAdd.TextAlign = ContentAlignment.MiddleRight;
             btAdd.UseVisualStyleBackColor = true;
+            btAdd.Click += btAdd_Click;
             // 
             // btDelete
             // 
@@ -121,6 +126,7 @@
             btDelete.Text = "Supprimer";
             btDelete.TextAlign = ContentAlignment.MiddleRight;
             btDelete.UseVisualStyleBackColor = true;
+            btDelete.Click += btDelete_Click;
             // 
             // btUpdate
             // 
@@ -133,6 +139,7 @@
             btUpdate.Text = "Modifier";
             btUpdate.TextAlign = ContentAlignment.MiddleRight;
             btUpdate.UseVisualStyleBackColor = true;
+            btUpdate.Click += btUpdate_Click;
             // 
             // frmArticle
             // 
@@ -145,8 +152,8 @@
             Text = "frmArticle";
             tlpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvArticle).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bsArticle).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)bsArticle).EndInit();
             ResumeLayout(false);
         }
 
