@@ -43,8 +43,19 @@ namespace WinFormsBdd_Edito
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            _db.AddArticle(tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
-            btRefresh.PerformClick();
+            if (_articles.Where(article => article.Titre == tbxTitle.Text && article.Auteur == tbxAutor.Text && article.Corps == tbxCorps.Text).Count() >= 1 || _articles.Where(article => article.Titre == tbxTitle.Text && article.Auteur == null && article.Corps == tbxCorps.Text).Count() >= 1)
+            {
+                MessageBox.Show("L'article que vous voulez créé existe déjà", "Erreur de creation", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+            }
+
+            if (MessageBox.Show($"Confirmer la creation de l'article \n nom : {tbxTitle.Text} \n corps : {tbxCorps.Text} \n auteur : {tbxAutor.Text}", "Creation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                var iDArticle = _db.AddArticle(tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
+                btRefresh.PerformClick();
+                bsArticle.Position = _articles.IndexOf(_articles.Where(u => u.iDArticle == iDArticle).FirstOrDefault());
+                return;
+            }
+
         }
 
         private void btDelete_Click(object sender, EventArgs e)
@@ -66,12 +77,8 @@ namespace WinFormsBdd_Edito
         private void btUpdate_Click(object sender, EventArgs e)
         {
             Article current = bsArticle.Current as Article;
-            //Verifie que le current n'est pas null
             if (current is not null)
             {
-                //Affiche une MessageBox demandant la confirmation de l'update de l'utilisateur.
-                //Dans ce MessageBox les information fournit pour l'update sont présente pour que l'utilisateur voit precisement ce qu'il va mettre à jour
-                //Si l'utilisateur confirme la requête est affectuée
                 if (MessageBox.Show($"Confirmer la modification de l'article {current.Titre} ?", "Modification", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     _db.UpdateUser(current.iDArticle, tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
