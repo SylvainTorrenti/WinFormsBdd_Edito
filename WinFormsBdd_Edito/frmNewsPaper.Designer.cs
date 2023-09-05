@@ -43,6 +43,7 @@
             btDelete = new Button();
             btUpdate = new Button();
             bsNewsPaper = new BindingSource(components);
+            btExit = new Button();
             tlpNewsPaper.SuspendLayout();
             tlpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNewsPaper).BeginInit();
@@ -147,6 +148,7 @@
             flowLayoutPanel1.Controls.Add(btAdd);
             flowLayoutPanel1.Controls.Add(btDelete);
             flowLayoutPanel1.Controls.Add(btUpdate);
+            flowLayoutPanel1.Controls.Add(btExit);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 389);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -205,6 +207,20 @@
             btUpdate.UseVisualStyleBackColor = true;
             btUpdate.Click += btUpdate_Click;
             // 
+            // btExit
+            // 
+            btExit.Image = Properties.Resources.exit_closethesession_close_6317;
+            btExit.ImageAlign = ContentAlignment.MiddleLeft;
+            btExit.Location = new Point(685, 3);
+            btExit.Margin = new Padding(245, 3, 3, 3);
+            btExit.Name = "btExit";
+            btExit.Size = new Size(104, 52);
+            btExit.TabIndex = 4;
+            btExit.Text = "Quitter";
+            btExit.TextAlign = ContentAlignment.MiddleRight;
+            btExit.UseVisualStyleBackColor = true;
+            btExit.Click += btExit_Click;
+            // 
             // frmNewsPaper
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -240,5 +256,6 @@
         private Button btDelete;
         private Button btUpdate;
         private BindingSource bsNewsPaper;
+        private Button btExit;
     }
 }

@@ -32,18 +32,21 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             btnArticle = new Button();
             btNewsPaper = new Button();
-            btComposition = new Button();
+            btCompo = new Button();
+            btExit = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.6616325F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.3383675F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 339F));
             tableLayoutPanel1.Controls.Add(btnArticle, 0, 0);
             tableLayoutPanel1.Controls.Add(btNewsPaper, 1, 0);
-            tableLayoutPanel1.Controls.Add(btComposition, 0, 1);
+            tableLayoutPanel1.Controls.Add(btCompo, 2, 0);
+            tableLayoutPanel1.Controls.Add(btExit, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -56,34 +59,59 @@
             // btnArticle
             // 
             btnArticle.Anchor = AnchorStyles.None;
-            btnArticle.Location = new Point(162, 101);
+            btnArticle.Image = Properties.Resources._1486486291_article_news_newspaper_paper_rss_81203;
+            btnArticle.ImageAlign = ContentAlignment.MiddleLeft;
+            btnArticle.Location = new Point(42, 84);
             btnArticle.Name = "btnArticle";
-            btnArticle.Size = new Size(75, 23);
+            btnArticle.Size = new Size(153, 57);
             btnArticle.TabIndex = 0;
             btnArticle.Text = "Article";
+            btnArticle.TextAlign = ContentAlignment.MiddleRight;
             btnArticle.UseVisualStyleBackColor = true;
             btnArticle.Click += btnArticle_Click;
             // 
             // btNewsPaper
             // 
             btNewsPaper.Anchor = AnchorStyles.None;
-            btNewsPaper.Location = new Point(562, 101);
+            btNewsPaper.Image = Properties.Resources.diagram_01_24516;
+            btNewsPaper.ImageAlign = ContentAlignment.MiddleLeft;
+            btNewsPaper.Location = new Point(272, 84);
             btNewsPaper.Name = "btNewsPaper";
-            btNewsPaper.Size = new Size(75, 23);
+            btNewsPaper.Size = new Size(153, 57);
             btNewsPaper.TabIndex = 1;
             btNewsPaper.Text = "Journal";
+            btNewsPaper.TextAlign = ContentAlignment.MiddleRight;
             btNewsPaper.UseVisualStyleBackColor = true;
             btNewsPaper.Click += btNewsPaper_Click;
             // 
-            // btComposition
+            // btCompo
             // 
-            btComposition.Anchor = AnchorStyles.None;
-            btComposition.Location = new Point(153, 326);
-            btComposition.Name = "btComposition";
-            btComposition.Size = new Size(94, 23);
-            btComposition.TabIndex = 2;
-            btComposition.Text = "Composition";
-            btComposition.UseVisualStyleBackColor = true;
+            btCompo.Anchor = AnchorStyles.None;
+            btCompo.Image = Properties.Resources._62871rolledupnewspaper_109257;
+            btCompo.ImageAlign = ContentAlignment.MiddleLeft;
+            btCompo.Location = new Point(553, 84);
+            btCompo.Name = "btCompo";
+            btCompo.Size = new Size(153, 57);
+            btCompo.TabIndex = 2;
+            btCompo.Text = "Journaux et articles";
+            btCompo.TextAlign = ContentAlignment.MiddleRight;
+            btCompo.UseVisualStyleBackColor = true;
+            btCompo.Click += btCompo_Click;
+            // 
+            // btExit
+            // 
+            btExit.Anchor = AnchorStyles.None;
+            btExit.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btExit.Image = Properties.Resources.exit_closethesession_close_6317;
+            btExit.ImageAlign = ContentAlignment.MiddleLeft;
+            btExit.Location = new Point(266, 301);
+            btExit.Name = "btExit";
+            btExit.Size = new Size(165, 73);
+            btExit.TabIndex = 3;
+            btExit.Text = "Quitter";
+            btExit.TextAlign = ContentAlignment.MiddleRight;
+            btExit.UseVisualStyleBackColor = true;
+            btExit.Click += btExit_Click;
             // 
             // frmMain
             // 
@@ -104,6 +132,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnArticle;
         private Button btNewsPaper;
-        private Button btComposition;
+        private Button btCompo;
+        private Button btExit;
     }
 }

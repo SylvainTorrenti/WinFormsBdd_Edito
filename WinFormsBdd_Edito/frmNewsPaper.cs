@@ -147,6 +147,10 @@ namespace WinFormsBdd_Edito
                     }
             }
         }
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void InitializeBinding()
         {
             _NewsPaper = new BindingList<NewsPaper>();

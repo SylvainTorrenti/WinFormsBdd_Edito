@@ -136,6 +136,22 @@ namespace WinFormsBdd_Edito
 
         
         }
+        public IEnumerable<ArticleAndNewspaper> GetArticleAndNewspaper()
+        {
+
+            try
+            {
+                _dbconnection.Open();
+                var q = "SELECT * from v_article_journal";
+                return _dbconnection.Query<ArticleAndNewspaper>(q);
+            }
+
+            finally
+            {
+                _dbconnection.Close();
+            }
+
+        }
     }
 }
 

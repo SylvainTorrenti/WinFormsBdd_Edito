@@ -84,11 +84,15 @@ namespace WinFormsBdd_Edito
                     if (tbxAutor != null)
                     {
                         MessageBox.Show($"L'article {current.Titre} a bien était modifier", "Modifications effectuées", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _db.UpdateUser(current.iDArticle, tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
-                    btRefresh.PerformClick();
+                        _db.UpdateUser(current.iDArticle, tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
+                        btRefresh.PerformClick();
                     }
                 }
             }
+        }
+        private void btQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         private void InitializeBinding()
         {
@@ -101,6 +105,6 @@ namespace WinFormsBdd_Edito
             tbxCorps.DataBindings.Add("text", bsArticle, "Corps", false, DataSourceUpdateMode.Never);
         }
 
-
+       
     }
 }

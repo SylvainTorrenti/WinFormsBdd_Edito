@@ -45,6 +45,7 @@
             tbxCorps = new TextBox();
             tbxAutor = new TextBox();
             bsArticle = new BindingSource(components);
+            btQuit = new Button();
             tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArticle).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -92,6 +93,7 @@
             flowLayoutPanel1.Controls.Add(btAdd);
             flowLayoutPanel1.Controls.Add(btDelete);
             flowLayoutPanel1.Controls.Add(btUpdate);
+            flowLayoutPanel1.Controls.Add(btQuit);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 387);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -228,6 +230,20 @@
             tbxAutor.Size = new Size(662, 23);
             tbxAutor.TabIndex = 5;
             // 
+            // btQuit
+            // 
+            btQuit.Image = Properties.Resources.exit_closethesession_close_6317;
+            btQuit.ImageAlign = ContentAlignment.MiddleLeft;
+            btQuit.Location = new Point(686, 3);
+            btQuit.Margin = new Padding(250, 3, 3, 3);
+            btQuit.Name = "btQuit";
+            btQuit.Size = new Size(103, 55);
+            btQuit.TabIndex = 4;
+            btQuit.Text = "Quitter";
+            btQuit.TextAlign = ContentAlignment.MiddleRight;
+            btQuit.UseVisualStyleBackColor = true;
+            btQuit.Click += btQuit_Click;
+            // 
             // frmArticle
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -265,5 +281,6 @@
         private TextBox tbxTitle;
         private TextBox tbxCorps;
         private TextBox tbxAutor;
+        private Button btQuit;
     }
 }

@@ -19,5 +19,16 @@ namespace WinFormsBdd_Edito
             using frmNewsPaper frmNewsPaper = new();
             frmNewsPaper.ShowDialog();
         }
+
+        private void btCompo_Click(object sender, EventArgs e)
+        {
+            using frmArticleAndNewsPaper frmArticleAndNewsPaper = new();
+            frmArticleAndNewsPaper.ShowDialog();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

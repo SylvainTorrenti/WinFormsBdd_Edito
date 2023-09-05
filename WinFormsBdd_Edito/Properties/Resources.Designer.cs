@@ -63,9 +63,49 @@ namespace WinFormsBdd_Edito.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486486291_article_news_newspaper_paper_rss_81203 {
+            get {
+                object obj = ResourceManager.GetObject("1486486291-article-news-newspaper-paper-rss_81203", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _62871rolledupnewspaper_109257 {
+            get {
+                object obj = ResourceManager.GetObject("62871rolledupnewspaper_109257", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_icon_icons_com_74429 {
             get {
                 object obj = ResourceManager.GetObject("add_icon-icons.com_74429", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap diagram_01_24516 {
+            get {
+                object obj = ResourceManager.GetObject("diagram-01_24516", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_closethesession_close_6317 {
+            get {
+                object obj = ResourceManager.GetObject("exit_closethesession_close_6317", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
