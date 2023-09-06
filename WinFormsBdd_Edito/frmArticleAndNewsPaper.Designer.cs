@@ -254,12 +254,16 @@
             // 
             // dgvArticleAndNews
             // 
+            dgvArticleAndNews.AllowUserToAddRows = false;
+            dgvArticleAndNews.AllowUserToDeleteRows = false;
+            dgvArticleAndNews.AllowUserToResizeRows = false;
             dgvArticleAndNews.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvArticleAndNews.BackgroundColor = SystemColors.Control;
             dgvArticleAndNews.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvArticleAndNews.Dock = DockStyle.Fill;
             dgvArticleAndNews.Location = new Point(3, 3);
             dgvArticleAndNews.Name = "dgvArticleAndNews";
+            dgvArticleAndNews.ReadOnly = true;
             dgvArticleAndNews.RowHeadersVisible = false;
             dgvArticleAndNews.RowTemplate.Height = 25;
             dgvArticleAndNews.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -273,6 +277,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "frmArticleAndNewsPaper";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Articles et Journaux";

@@ -37,15 +37,15 @@
             btAdd = new Button();
             btDelete = new Button();
             btUpdate = new Button();
+            btQuit = new Button();
             tlpBox = new TableLayoutPanel();
             Titre = new Label();
             label2 = new Label();
             label3 = new Label();
             tbxTitle = new TextBox();
-            tbxCorps = new TextBox();
             tbxAutor = new TextBox();
+            rtxbCorps = new RichTextBox();
             bsArticle = new BindingSource(components);
-            btQuit = new Button();
             tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArticle).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -64,8 +64,8 @@
             tlpMain.Location = new Point(0, 0);
             tlpMain.Name = "tlpMain";
             tlpMain.RowCount = 3;
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 64.6666641F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20.666666F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 48.6666679F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 36.6666679F));
             tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 14.4444447F));
             tlpMain.Size = new Size(800, 450);
             tlpMain.TabIndex = 0;
@@ -74,6 +74,7 @@
             // 
             dgvArticle.AllowUserToAddRows = false;
             dgvArticle.AllowUserToDeleteRows = false;
+            dgvArticle.AllowUserToResizeRows = false;
             dgvArticle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvArticle.BackgroundColor = SystemColors.Control;
             dgvArticle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -84,7 +85,7 @@
             dgvArticle.RowHeadersVisible = false;
             dgvArticle.RowTemplate.Height = 25;
             dgvArticle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvArticle.Size = new Size(794, 285);
+            dgvArticle.Size = new Size(794, 213);
             dgvArticle.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -152,6 +153,20 @@
             btUpdate.UseVisualStyleBackColor = true;
             btUpdate.Click += btUpdate_Click;
             // 
+            // btQuit
+            // 
+            btQuit.Image = Properties.Resources.exit_closethesession_close_6317;
+            btQuit.ImageAlign = ContentAlignment.MiddleLeft;
+            btQuit.Location = new Point(686, 3);
+            btQuit.Margin = new Padding(250, 3, 3, 3);
+            btQuit.Name = "btQuit";
+            btQuit.Size = new Size(103, 55);
+            btQuit.TabIndex = 4;
+            btQuit.Text = "Quitter";
+            btQuit.TextAlign = ContentAlignment.MiddleRight;
+            btQuit.UseVisualStyleBackColor = true;
+            btQuit.Click += btQuit_Click;
+            // 
             // tlpBox
             // 
             tlpBox.ColumnCount = 2;
@@ -161,16 +176,16 @@
             tlpBox.Controls.Add(label2, 0, 1);
             tlpBox.Controls.Add(label3, 0, 2);
             tlpBox.Controls.Add(tbxTitle, 1, 0);
-            tlpBox.Controls.Add(tbxCorps, 1, 1);
             tlpBox.Controls.Add(tbxAutor, 1, 2);
+            tlpBox.Controls.Add(rtxbCorps, 1, 1);
             tlpBox.Dock = DockStyle.Fill;
-            tlpBox.Location = new Point(3, 294);
+            tlpBox.Location = new Point(3, 222);
             tlpBox.Name = "tlpBox";
             tlpBox.RowCount = 3;
             tlpBox.RowStyles.Add(new RowStyle());
             tlpBox.RowStyles.Add(new RowStyle());
             tlpBox.RowStyles.Add(new RowStyle());
-            tlpBox.Size = new Size(794, 87);
+            tlpBox.Size = new Size(794, 159);
             tlpBox.TabIndex = 2;
             // 
             // Titre
@@ -190,7 +205,7 @@
             label2.Dock = DockStyle.Fill;
             label2.Location = new Point(3, 29);
             label2.Name = "label2";
-            label2.Size = new Size(120, 29);
+            label2.Size = new Size(120, 102);
             label2.TabIndex = 1;
             label2.Text = "Corps";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -199,7 +214,7 @@
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(3, 58);
+            label3.Location = new Point(3, 131);
             label3.Name = "label3";
             label3.Size = new Size(120, 29);
             label3.TabIndex = 2;
@@ -214,35 +229,23 @@
             tbxTitle.Size = new Size(662, 23);
             tbxTitle.TabIndex = 3;
             // 
-            // tbxCorps
-            // 
-            tbxCorps.Dock = DockStyle.Fill;
-            tbxCorps.Location = new Point(129, 32);
-            tbxCorps.Name = "tbxCorps";
-            tbxCorps.Size = new Size(662, 23);
-            tbxCorps.TabIndex = 4;
-            // 
             // tbxAutor
             // 
             tbxAutor.Dock = DockStyle.Fill;
-            tbxAutor.Location = new Point(129, 61);
+            tbxAutor.Location = new Point(129, 134);
             tbxAutor.Name = "tbxAutor";
             tbxAutor.Size = new Size(662, 23);
             tbxAutor.TabIndex = 5;
             // 
-            // btQuit
+            // rtxbCorps
             // 
-            btQuit.Image = Properties.Resources.exit_closethesession_close_6317;
-            btQuit.ImageAlign = ContentAlignment.MiddleLeft;
-            btQuit.Location = new Point(686, 3);
-            btQuit.Margin = new Padding(250, 3, 3, 3);
-            btQuit.Name = "btQuit";
-            btQuit.Size = new Size(103, 55);
-            btQuit.TabIndex = 4;
-            btQuit.Text = "Quitter";
-            btQuit.TextAlign = ContentAlignment.MiddleRight;
-            btQuit.UseVisualStyleBackColor = true;
-            btQuit.Click += btQuit_Click;
+            rtxbCorps.Dock = DockStyle.Fill;
+            rtxbCorps.Location = new Point(129, 32);
+            rtxbCorps.MaxLength = 65000;
+            rtxbCorps.Name = "rtxbCorps";
+            rtxbCorps.Size = new Size(662, 96);
+            rtxbCorps.TabIndex = 6;
+            rtxbCorps.Text = "";
             // 
             // frmArticle
             // 
@@ -251,6 +254,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tlpMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "frmArticle";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmArticle";
@@ -279,8 +284,8 @@
         private Label label2;
         private Label label3;
         private TextBox tbxTitle;
-        private TextBox tbxCorps;
         private TextBox tbxAutor;
         private Button btQuit;
+        private RichTextBox rtxbCorps;
     }
 }

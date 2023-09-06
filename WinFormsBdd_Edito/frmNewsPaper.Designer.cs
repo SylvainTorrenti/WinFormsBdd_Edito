@@ -42,8 +42,8 @@
             btAdd = new Button();
             btDelete = new Button();
             btUpdate = new Button();
-            bsNewsPaper = new BindingSource(components);
             btExit = new Button();
+            bsNewsPaper = new BindingSource(components);
             tlpNewsPaper.SuspendLayout();
             tlpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNewsPaper).BeginInit();
@@ -129,6 +129,7 @@
             // 
             dgvNewsPaper.AllowUserToAddRows = false;
             dgvNewsPaper.AllowUserToDeleteRows = false;
+            dgvNewsPaper.AllowUserToResizeRows = false;
             dgvNewsPaper.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvNewsPaper.BackgroundColor = SystemColors.Control;
             dgvNewsPaper.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -228,6 +229,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tlpNewsPaper);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "frmNewsPaper";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Journals";

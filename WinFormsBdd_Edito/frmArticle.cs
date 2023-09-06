@@ -43,14 +43,14 @@ namespace WinFormsBdd_Edito
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            if (_articles.Where(article => article.Titre == tbxTitle.Text && article.Auteur == tbxAutor.Text && article.Corps == tbxCorps.Text).Count() >= 1 || _articles.Where(article => article.Titre == tbxTitle.Text && article.Auteur == null && article.Corps == tbxCorps.Text).Count() >= 1)
+            if (_articles.Where(article => article.Titre == tbxTitle.Text && article.Auteur == tbxAutor.Text && article.Corps == rtxbCorps.Text).Count() >= 1 || _articles.Where(article => article.Titre == tbxTitle.Text && article.Auteur == null && article.Corps == rtxbCorps.Text).Count() >= 1)
             {
                 MessageBox.Show("L'article que vous voulez créé existe déjà", "Erreur de creation", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
             }
 
-            if (MessageBox.Show($"Confirmer la creation de l'article \n nom : {tbxTitle.Text} \n corps : {tbxCorps.Text} \n auteur : {tbxAutor.Text}", "Creation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show($"Confirmer la creation de l'article \n nom : {tbxTitle.Text} \n corps : {rtxbCorps.Text} \n auteur : {tbxAutor.Text}", "Creation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                var iDArticle = _db.AddArticle(tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
+                var iDArticle = _db.AddArticle(tbxTitle.Text, rtxbCorps.Text, tbxAutor.Text);
                 btRefresh.PerformClick();
                 bsArticle.Position = _articles.IndexOf(_articles.Where(u => u.iDArticle == iDArticle).FirstOrDefault());
                 return;
@@ -84,7 +84,7 @@ namespace WinFormsBdd_Edito
                     if (tbxAutor != null)
                     {
                         MessageBox.Show($"L'article {current.Titre} a bien était modifier", "Modifications effectuées", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        _db.UpdateUser(current.iDArticle, tbxTitle.Text, tbxCorps.Text, tbxAutor.Text);
+                        _db.UpdateArticle(current.iDArticle, tbxTitle.Text, rtxbCorps.Text, tbxAutor.Text);
                         btRefresh.PerformClick();
                     }
                 }
@@ -102,9 +102,9 @@ namespace WinFormsBdd_Edito
             dgvArticle.Columns["iDArticle"].Visible = false;
             tbxTitle.DataBindings.Add("text", bsArticle, "Titre", false, DataSourceUpdateMode.Never);
             tbxAutor.DataBindings.Add("text", bsArticle, "Auteur", false, DataSourceUpdateMode.Never);
-            tbxCorps.DataBindings.Add("text", bsArticle, "Corps", false, DataSourceUpdateMode.Never);
+            rtxbCorps.DataBindings.Add("text", bsArticle, "Corps", false, DataSourceUpdateMode.Never);
         }
 
-       
+
     }
 }

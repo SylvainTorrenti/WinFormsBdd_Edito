@@ -62,7 +62,7 @@ namespace WinFormsBdd_Edito
                 _dbconnection.Close();
             }
         }
-        public int UpdateUser(int IDArticle, string Titre, string Corps, string? Auteur)
+        public int UpdateArticle(int IDArticle, string Titre, string Corps, string? Auteur)
         {
             try
             {

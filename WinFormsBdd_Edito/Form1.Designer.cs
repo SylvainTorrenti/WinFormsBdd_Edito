@@ -120,6 +120,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edito";
